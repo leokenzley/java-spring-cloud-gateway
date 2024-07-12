@@ -1,0 +1,10 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: Callme
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://keycloak.thstecnologia.io/realms/GatewayTeste/protocol/openid-connect/certs
