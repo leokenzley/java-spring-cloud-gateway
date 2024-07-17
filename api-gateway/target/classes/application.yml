@@ -9,25 +9,14 @@ spring:
           uri: "http://localhost:8082/messages"
           predicates:
             Path=/messages/**
-          filters:
-            - TokenRelay=
-            - RemoveRequestHeader=Cookie
+        - id: callme
+          uri: "http://localhost:8040/callme"
+          predicates:
+            Path=/callme/**
+
+
   security:
     oauth2:
-      client:
-        registration:
-          gateway:
-            provider: keycloak
-            client-id: cl-api-gateway
-            client-secret: 48RSRwCDaMaXMIs8KvRH0eyNT166rXKA
-            authorization-grant-type: authorization_code
-            redirect-uri: "http://localhost:8083/login/oauth2/code/{registrationId}"
-            scope: openid, message.read,profile,email
-        provider:
-          keycloak:
-            issuer-uri: https://keycloak.thstecnologia.io/realms/GatewayTeste
-            authorization-uri: https://keycloak.thstecnologia.io/realms/GatewayTeste/protocol/openid-connect/auth
-            token-uri: https://keycloak.thstecnologia.io/realms/GatewayTeste/protocol/openid-connect/token
-            user-info-uri: https://keycloak.thstecnologia.io/realms/GatewayTeste/protocol/openid-connect/userinfo
-            user-name-attribute: sub
-            jwk-set-uri: https://keycloak.thstecnologia.io/realms/GatewayTeste/protocol/openid-connect/certs
+      resourceserver:
+        jwt:
+          issuer-uri: https://keycloak.thstecnologia.io/realms/GatewayTeste

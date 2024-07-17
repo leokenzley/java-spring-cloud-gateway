@@ -1,7 +1,5 @@
 package com.leokenzley.caller.demo.api.web.rest.controller;
 
-import com.nimbusds.jose.util.JSONObjectUtils;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,11 +15,6 @@ public class CallerController {
     public String ping() {
         SecurityContext context = SecurityContextHolder.getContext();
         Authentication authenticationauthentication = context.getAuthentication();
-        System.out.println("*********");
-        System.out.println("*********");
-        System.out.println("*********");
-        System.out.println("*********");
-        System.out.println("*********");
         System.out.println(authenticationauthentication.getPrincipal().toString());
         return "GO GO";
     }
