@@ -103,6 +103,9 @@
 						</goals>
 					</execution>
 				</executions>
+<!--				<configuration>-->
+<!--					<dotGitDirectory>${project.basedir}/.git</dotGitDirectory>-->
+<!--				</configuration>-->
 			</plugin>
 		</plugins>
 	</build>

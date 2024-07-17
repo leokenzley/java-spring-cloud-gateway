@@ -9,6 +9,9 @@ spring:
         jwt:
           jwk-set-uri: https://keycloak.thstecnologia.io/realms/GatewayTeste/protocol/openid-connect/certs
 management:
+  info:
+    git:
+      mode: full
   endpoints:
     web:
       exposure:
